@@ -1,6 +1,6 @@
 # Botanical Garden
 
-This is a website for **Mist Gardens Museum & Botanical Garden**, providing visitors with an engaging and interactive experience. The site features information about the gardens, events, exhibitions, and programs, along with stunning visuals of the garden and its surroundings. Design by Jenelle Miller, which I found in the [Figma Community](https://www.figma.com/community/file/1055618288526017668/botanical-garden-community).
+This is a website for **Mist Gardens Museum & Botanical Garden**, providing visitors with an engaging and interactive experience. The site features information about the gardens, events, exhibitions, and programs, along with stunning visuals of the garden and its surroundings.
 
 
 ## Demo
