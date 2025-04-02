@@ -1,0 +1,21 @@
+{% from "./src/content-components/hero-teaser/hero-teaser.njk" import Render_HeroTeaser -%}
+{% from "./src/content-components/discover-nature/discover-nature.njk" import Render_DiscoverNature -%}
+{% from "./src/content-components/news/news.njk" import Render_News -%}
+{% from "./src/page-components/header/header.njk" import Render_Header -%}
+{% from "./src/page-components/footer/footer.njk" import Render_Footer -%}
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Botanical Garden</title>
+	<link rel="icon" href="./src/public/icons/favicon.png" type="image/png">
+	<link rel="stylesheet" href="./src/assets/scss/index.scss"/>
+</head>
+<body>
+	{{ Render_Header(config, items=navItems) }}
+	{{ Render_HeroTeaser(config)  }}
+	{{ Render_DiscoverNature(config) }}
+	{{ Render_News(config, items=newsItems) }}
+	{{ Render_Footer(config, items=navItems) }}
+	<script type="module" src="./src/assets/js/main.js"></script>
+</body>

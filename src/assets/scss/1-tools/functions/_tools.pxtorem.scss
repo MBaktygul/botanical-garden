@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+/* PX to REM
+  ==========================================================================
+  converts px to rem = easier calculations
+
+  usage:
+  font-size: pxtorem(15);
+*/
+
+$html-font-size: 16;
+
+@function pxtorem($value) {
+  $rems: math.div($value, $html-font-size) * 1rem;
+  @return $rems;
+}

@@ -1,0 +1,48 @@
+{% macro Render_News(config, items) %}
+  <!-- News Section Wrapper -->
+  <div class="news__wrapper container">
+    <section class="news">
+      <!-- Header with title and CTA link -->
+      <div class="news__header">
+        <h2>News &amp; Updates</h2>
+        <a href="#" class="text-button news__link">VIEW ALL POSTS
+          <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19" stroke="#475F45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="#475F45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </i>
+        </a>
+      </div>
+
+      <!-- News Items List -->
+      <ul class="news__content-wrapper">
+        {% for item in items %}
+          <li>
+            <div class="news__content {% if loop.first %}news__first-item{% else %}news__default-item{% endif %}">
+              <img src="{{ item.image }}" alt="{{ item.alt }}">
+              <div class="news__context">
+                <h3>
+                  <a href="#">{{ item.title }}</a>
+                </h3>
+                <p>{{ item.text }}</p>
+                <p style="font-style: italic;">{{ item.date }}</p>
+              </div>
+            </div>
+            {% if not loop.first and not loop.last %}
+              <div class="news__border"></div>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Decorative Detail Image -->
+      <div class="news__detail">
+        <img src="src/public/images/detail2.png" alt="the green plant">
+      </div>
+    </section>
+  </div>
+{% endmacro %}
+
+<!-- Render Section -->
+{{ Render_News(config, items=newsItems) }}

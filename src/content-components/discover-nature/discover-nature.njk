@@ -1,0 +1,32 @@
+{% macro Render_DiscoverNature(config) %}
+  <!-- Discover Nature Section Wrapper -->
+  <div class="discover-nature__wrapper container">
+    <section class="discover-nature">
+      <!-- First Image -->
+      <img class="discover-nature__image discover-nature__image-first" src="src/public/images/2.png" alt="the photo of two plants in pots">
+
+      <!-- Second Image -->
+      <img class="discover-nature__image discover-nature__image-second" src="src/public/images/3.png" alt="the photo of two orange chairs surrounded with greens">
+
+      <!-- Text Content and Button -->
+      <div class="discover-nature__inner discover-nature__content">
+        <div class="discover-nature__inner discover-nature__content__text">
+          <h2>Discover yourself with nature</h2>
+          <p>
+            Embrace the tranquility of nature and discover moments of inner peace.
+            Walk through lush green forests, breathe in the fresh air, and let nature awaken your soul.
+          </p>
+        </div>
+        <button class="btn btn--white text-button">LEARN MORE</button>
+      </div>
+
+      <!-- Decorative Detail Image -->
+      <div class="discover-nature__content__detail">
+        <img src="src/public/images/detail.png" alt="the green plant">
+      </div>
+    </section>
+  </div>
+{% endmacro %}
+
+<!-- Render Section -->
+{{ Render_DiscoverNature }}

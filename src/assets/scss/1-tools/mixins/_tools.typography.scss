@@ -1,0 +1,40 @@
+@use '../../0-settings/settings.fonts' as *;
+@use '../functions/tools.pxtorem' as *;
+@use '../functions/tools.strip-unit' as *;
+@use '../functions/tools.line-height' as *;
+@use '../functions/tools.fluid-unit' as *;
+
+@mixin font($family, $weight: inherit, $sizeMobile: inherit, $sizeDesktop: inherit, $lineHeight: $line-height) {
+	font-family: $family;
+	font-weight: $weight;
+	font-size: fluid-unit($sizeMobile, $sizeDesktop);
+	line-height: lineheight(strip-unit($sizeDesktop), $lineHeight);
+}
+
+@mixin h1 {
+	@include font($font-family-libre, $font-weight-regular-libre, 34, 57, 62);
+}
+
+@mixin h2 {
+	@include font($font-family-libre, $font-weight-regular-libre, 34, 45, 50);
+}
+
+@mixin h3 {
+	@include font($font-family-libre, $font-weight-bold-libre, 23, 23, 26);
+}
+
+@mixin text {
+	@include font($font-family-roboto, $font-weight-regular, 16, 20, 30);
+}
+
+@mixin text-large {
+	@include font($font-family-roboto, $font-weight-light, 20, 25, 37);
+}
+
+@mixin text-small {
+	@include font($font-family-roboto, $font-weight-regular, 16, 16, 24);
+}
+
+@mixin text-button {
+	@include font($font-family-roboto, $font-weight-bold, 14, 14, 16);
+}

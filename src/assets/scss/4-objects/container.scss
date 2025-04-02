@@ -1,0 +1,16 @@
+@use '@/assets/scss/1-tools/functions/tools.pxtorem' as *;
+@use '@/assets/scss/1-tools/mixins/tools.typography' as *;
+@use '@/assets/scss/1-tools/mixins/tools.media-query' as *;
+@use '@/assets/scss/1-tools/mixins/tools.module-space' as *;
+
+.container {
+	padding: 0 pxtorem(16);
+
+	@include mq(tablet, min) {
+		padding: 0 pxtorem(24);
+	}
+
+	@include mq(desktop, min) {
+		padding: 0 pxtorem(100);
+	}
+}

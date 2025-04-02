@@ -1,0 +1,115 @@
+@use '@/assets/scss/0-settings/settings.fonts' as *;
+@use '@/assets/scss/0-settings/settings.breakpoints' as *;
+@use '@/assets/scss/1-tools/functions/tools.pxtorem' as *;
+@use '@/assets/scss/1-tools/functions/tools.fluid-unit' as *;
+@use '@/assets/scss/1-tools/mixins/tools.typography' as *;
+@use '@/assets/scss/1-tools/mixins/tools.media-query' as *;
+@use '@/assets/scss/1-tools/mixins/tools.module-space' as *;
+
+// Wrapper with background and spacing
+.discover-nature__wrapper {
+	@include module-space-margin;
+	background-color: var(--color-olive-green);
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	width: 100%;
+}
+
+// Grid layout for the discover section
+.discover-nature {
+	@include module-space-padding;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: pxtorem(16);
+	color: var(--color-white);
+
+	@include mq(tablet, min) {
+		padding-left: pxtorem(86);
+		padding-right: pxtorem(86);
+		gap: pxtorem(40);
+	}
+
+	@include mq(desktop, min) {
+		grid-template-columns: 1fr 1fr;
+		gap: pxtorem(80);
+		padding-left: pxtorem(164);
+		padding-right: pxtorem(164);
+	}
+}
+
+// Styling for both images
+.discover-nature__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// Second image layout on desktop
+.discover-nature__image-second {
+	@include mq(desktop, min) {
+		order: 3;
+		grid-column: span 2;
+		height: pxtorem(410);
+		object-position: top;
+	}
+}
+
+// Flex container for vertical alignment
+.discover-nature__inner {
+	display: flex;
+	flex-direction: column;
+	gap: pxtorem(16);
+	justify-content: center;
+}
+
+// Content layout and alignment
+.discover-nature__content {
+	align-items: center;
+	text-align: center;
+	text-wrap-style: balance;
+	padding-top: pxtorem(24);
+
+	@include mq(tablet, min) {
+		@include module-space-padding-tablet;
+		padding-top: pxtorem(44);
+		align-items: start;
+		text-align: start;
+	}
+
+	@include mq(desktop, min) {
+		padding-top: 0;
+	}
+}
+
+// Headline and paragraph styling
+.discover-nature__content__text {
+	padding-bottom: pxtorem(16);
+
+	> h2 {
+		text-transform: capitalize;
+		color: var(--color-white);
+	}
+}
+
+// Decorative plant detail image positioning
+.discover-nature__content__detail {
+	position: absolute;
+	min-width: pxtorem(300);
+	width: 100%;
+	opacity: 0.07;
+	bottom: pxtorem(-50);
+	left: pxtorem(180);
+	z-index: -1;
+
+	@include mq(tablet, min) {
+		bottom: pxtorem(-100);
+		left: pxtorem(400);
+	}
+
+	@include mq(desktop, min) {
+		max-width: pxtorem(700);
+		bottom: pxtorem(250);
+		left: 70%;
+	}
+}

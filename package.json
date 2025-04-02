@@ -1,0 +1,26 @@
+{
+  "name": "botanical-garden",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --fix .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@vituum/vite-plugin-nunjucks": "^1.1.0",
+    "sass": "^1.85.1",
+    "sass-embedded": "^1.85.1",
+    "vite": "^6.2.0",
+    "vite-plugin-nunjucks": "^0.2.0"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4"
+  },
+  "main": "main.js",
+  "author": "Baktygul Mananova",
+  "license": "MIT"
+}

@@ -1,0 +1,40 @@
+@use 'sass:meta';
+
+/*
+ see: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/ */
+
+/* 2. Generic
+  ==========================================================================
+  reset and/or normalize styles, box-sizing definition, etc. */
+@use '2-generic/generic.normalize.scss';
+
+/* 3. Elements
+  ==========================================================================
+  styling for bare HTML elements (like H1, A, etc.) */
+@use '3-elements/_elements.main.scss' as main;
+@use '3-elements/_elements.typography.scss' as typography;
+
+/* 4. Objects
+  ==========================================================================
+  class-based selectors which define undecorated design patterns */
+@use '4-objects/button.scss' as button;
+@use '4-objects/container.scss' as container;
+
+/* 5. 
+content-components
+  ==========================================================================
+  specific UI content-components. */
+@use '@/content-components/hero-teaser/hero-teaser.scss';
+@use '@/content-components/discover-nature/discover-nature.scss';
+@use '@/content-components/news/news.scss';
+
+/* page-components
+  ========================================================================== */
+@use '@/page-components/header/header.scss';
+@use '@/page-components/footer/footer.scss';
+
+/* 6. Utilities (⚠️ override anything ⚠)
+  ==========================================================================
+  utilities and helper classes with ability to override anything which
+  goes before */
+@include meta.load-css('6-utilities/utilities.accessibility');

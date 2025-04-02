@@ -1,0 +1,74 @@
+@use '../../0-settings/settings.fonts' as *;
+@use 'scss_settings/settings.paths' as *;
+
+@mixin font-face($family, $src, $style: normal, $weight: normal) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src:
+      url('#{$src}.woff2') format('woff2'),
+      url('#{$src}.woff') format('woff'),
+      url('#{$src}.woff') format('eot');
+  }
+}
+
+// Libre Baskerville // ------------------------------------------------
+@include font-face(
+  $font-name-libre,
+  '#{$path-font}LibreBaskerville-Regular',
+  normal,
+  $font-weight-regular-libre
+);
+
+@include font-face(
+  $font-name-libre,
+  '#{$path-font}LibreBaskerville-Bold',
+  normal,
+  $font-weight-bold-libre
+);
+
+// Roboto // -----------------------------------------------------------
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Light',
+  normal,
+  $font-weight-light-roboto
+);
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Regular',
+  normal,
+  $font-weight-regular-roboto
+);
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Regular',
+  italic,
+  $font-weight-regular-roboto
+);
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Medium',
+  normal,
+  $font-weight-medium-roboto
+);
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Bold',
+  normal,
+  $font-weight-bold-roboto
+);
+
+@include font-face(
+  $font-name-roboto,
+  '#{$path-font}Roboto-Bold',
+  italic,
+  $font-weight-bold-roboto
+);

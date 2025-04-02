@@ -1,0 +1,30 @@
+{% macro Render_HeroTeaser(config) %}
+  <!-- Hero Teaser Section Wrapper -->
+  <section class="hero-teaser container">
+    <div class="hero-teaser__content">
+      <!-- Content and Text Area -->
+      <div class="hero-teaser__content-inner">
+        <div class="hero-teaser__content-text">
+          <h1>A beautiful adventure awaits</h1>
+          <p class="text-large">
+            Embark on a journey like no other, where the horizon meets the sky and every moment is filled with wonder and excitement. Join us for an unforgettable experience!
+          </p>
+        </div>
+
+        <!-- Buttons -->
+        <div class="hero-teaser__button">
+          <button class="btn btn--primary text-button">BUY TICKETS</button>
+          <button class="btn btn--secondary text-button">LEARN MORE</button>
+        </div>
+      </div>
+
+      <!-- Right Image -->
+      <div class="hero-teaser__image">
+        <img src="src/public/images/hero-image.jpg" alt="Hero Image">
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+<!-- Render Section -->
+{{ Render_HeroTeaser }}

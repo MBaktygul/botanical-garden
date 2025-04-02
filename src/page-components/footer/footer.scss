@@ -1,0 +1,110 @@
+@use '@/assets/scss/0-settings/settings.fonts' as *;
+@use '@/assets/scss/0-settings/settings.breakpoints' as *;
+@use '@/assets/scss/1-tools/functions/tools.pxtorem' as *;
+@use '@/assets/scss/1-tools/functions/tools.fluid-unit' as *;
+@use '@/assets/scss/1-tools/mixins/tools.typography' as *;
+@use '@/assets/scss/1-tools/mixins/tools.media-query' as *;
+@use '@/assets/scss/1-tools/mixins/tools.module-space' as *;
+
+// Footer Styles
+
+.footer__wrapper {
+	@include module-space-margin;
+}
+
+.footer {
+	@include module-space-padding;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: pxtorem(50);
+	background-color: var(--color-olive-green);
+	color: var(--color-white);
+
+	@include mq(tablet, min) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+	}
+}
+
+.footer__content {
+	display: flex;
+	flex-direction: column;
+	gap: pxtorem(20);
+	max-width: pxtorem(400);
+
+	@include mq(tablet, min) {
+		align-items: start;
+		text-align: start;
+	}
+}
+
+.footer__logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: pxtorem(14);
+	color: var(--color-white);
+}
+
+.footer__logo-heading {
+	font-weight: 500;
+	font-size: pxtorem(23);
+}
+
+.footer__logo-subheading {
+	text-transform: capitalize;
+	font-style: italic;
+}
+
+.footer__nav {
+	display: flex;
+	flex-direction: column;
+	gap: pxtorem(20);
+
+	> ul li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: pxtorem(10);
+	}
+
+	@include mq(tablet, min) {
+		text-align: start;
+
+		> ul li {
+			justify-content: start;
+			align-items: start;
+		}
+	}
+}
+
+.footer__social {
+	> ul {
+		display: flex;
+		gap: pxtorem(30);
+
+		@include mq(desktop, min) {
+			cursor: pointer;
+		}
+	}
+
+	> h3 {
+		padding-bottom: pxtorem(20);
+	}
+
+	@include mq(tablet, min) {
+		text-align: start;
+	}
+}
+
+.footer__copyright {
+	background-color: var(--color-dark-green);
+	padding: pxtorem(40);
+	color: var(--color-white);
+	font-size: pxtorem(14);
+	text-align: center;
+}

@@ -1,0 +1,109 @@
+@use '@/assets/scss/0-settings/settings.fonts' as *;
+@use '@/assets/scss/0-settings/settings.breakpoints' as *;
+@use '@/assets/scss/1-tools/functions/tools.pxtorem' as *;
+@use '@/assets/scss/1-tools/functions/tools.fluid-unit' as *;
+@use '@/assets/scss/1-tools/mixins/tools.typography' as *;
+@use '@/assets/scss/1-tools/mixins/tools.media-query' as *;
+@use '@/assets/scss/1-tools/mixins/tools.module-space' as *;
+
+// Hero teaser section layout
+.hero-teaser__content {
+	@include module-space-margin;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	grid-template-columns: 1fr;
+	gap: pxtorem(24);
+	justify-items: center;
+	color: var(--color-dark-green);
+
+	@include mq(tablet, min) {
+		gap: pxtorem(32);
+	}
+
+	@include mq(desktop, min) {
+		justify-items: end;
+		text-align: left;
+		grid-template-columns: 1fr 1fr;
+		gap: pxtorem(200);
+	}
+}
+
+// Inner content and text block
+.hero-teaser__content-inner {
+	display: flex;
+	flex-direction: column;
+	gap: pxtorem(24);
+	text-align: center;
+	width: 100%;
+
+	@include mq(tablet, min) {
+		gap: pxtorem(32);
+	}
+
+	@include mq(desktop, min) {
+		width: 100%;
+		justify-content: center;
+		text-align: start;
+	}
+}
+
+// Heading and paragraph block
+.hero-teaser__content-text {
+	display: flex;
+	flex-direction: column;
+	gap: pxtorem(16);
+
+	> h1 {
+		text-transform: capitalize;
+		text-wrap-style: balance;
+	}
+
+	@include mq(tablet, min) {
+		gap: pxtorem(24);
+	}
+}
+
+// Button group layout
+.hero-teaser__button {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	gap: pxtorem(8);
+
+	@include mq(tablet, min) {
+		gap: pxtorem(16);
+	}
+
+	@include mq(desktop, min) {
+		justify-content: start;
+	}
+}
+
+// Image styling and border on the right
+.hero-teaser__image {
+	width: pxtorem(255);
+	border-top-left-radius: pxtorem(338.53);
+	border-top-right-radius: pxtorem(338.53);
+	border: 3px solid var(--color-gray);
+	padding: pxtorem(3);
+	margin: pxtorem(36) auto 0 auto;
+
+	> img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-top-left-radius: inherit;
+		border-top-right-radius: inherit;
+	}
+
+	@include mq(tablet, min) {
+		width: pxtorem(390);
+		margin: 0;
+	}
+
+	@include mq(desktop, min) {
+		width: pxtorem(500);
+	}
+}

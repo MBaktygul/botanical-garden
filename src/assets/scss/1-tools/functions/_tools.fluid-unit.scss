@@ -1,0 +1,32 @@
+@use 'sass:math';
+@use '../../0-settings/settings.fonts' as *;
+@use '../../1-tools/functions/tools.pxtorem' as *;
+
+@function round-value($number, $decimals: 0) {
+  $n: 1;
+  @if $decimals > 0 {
+    @for $i from 1 through $decimals {
+      $n: $n * 10;
+    }
+  }
+  @return math.div(math.round($number * $n), $n);
+}
+
+@function fluid-unit(
+  $min-size,
+  $max-size,
+  $min-breakpoint: $fluid-min-bp,
+  $max-breakpoint: $fluid-max-bp,
+  $unit: vw
+) {
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: round-value($slope * 100, 6);
+  $intercept-rem: round-value(pxtorem($min-size - $slope * $min-breakpoint), 6);
+  $min-size-rem: round-value(pxtorem($min-size), 2);
+  $max-size-rem: round-value(pxtorem($max-size), 2);
+  @return clamp(
+    #{$min-size-rem},
+    #{$slope-to-unit}#{$unit} + #{$intercept-rem},
+    #{$max-size-rem}
+  );
+}

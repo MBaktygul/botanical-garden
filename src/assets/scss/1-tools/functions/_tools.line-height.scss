@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+@function lineheight($px, $base: $line-height) {
+  @return math.div($base, $px);
+}
+
+// usage
+// .foo {
+//   font-size: 26px;
+//   line-height: lineheight(26, 32); //1.23077
+// }

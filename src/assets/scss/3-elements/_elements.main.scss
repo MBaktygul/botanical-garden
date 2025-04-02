@@ -1,0 +1,39 @@
+@use '../0-settings/settings.colors' as *;
+@use '../1-tools/functions/tools.pxtorem' as *;
+@use '../0-settings/settings.fonts' as *;
+
+html {
+	height: 100%;
+}
+
+// Pure HSL values allow us to do something like: hsl(var(--color-black-hsl))
+:root {
+	// Colors
+	@each $color-name, $color-hsl in $colors {
+		--color-#{"#{$color-name}"}: hsl(#{$color-hsl});
+		--color-#{"#{$color-name}"}-hsl: #{$color-hsl};
+	}
+}
+
+body {
+	max-width: 1920px;
+	margin: 0 auto;
+	font-family: $font-family-roboto;
+	font-weight: $font-weight-regular;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: var(--color-black);
+}
+
+a:hover {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.news a:hover,
+.footer__content a:hover,
+.footer__social a:hover,
+.header__nav li:last-child a:hover,
+.header > a:hover {
+	text-decoration: none;
+}
