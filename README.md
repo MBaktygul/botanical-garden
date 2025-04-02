@@ -51,7 +51,7 @@ The layout adjusts dynamically to provide a smooth and user-friendly experience,
 ## Credits
 
 - **Designer**: Special thanks to Jenelle Miller for creating the beautiful design for the project, which I found in the [Figma Community](https://www.figma.com/community/file/1055618288526017668/botanical-garden-community).
-- **Team Lead**: Thanks to my team lead for helping with the initial setup of the project.
+- **Team Lead**: Thanks to my team lead Manuel for helping with the initial setup of the project.
 - **Libraries**: 
   - [Nunjucks](https://mozilla.github.io/nunjucks/)
   - [Vite](https://vitejs.dev/)
